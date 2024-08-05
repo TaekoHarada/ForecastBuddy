@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons/faBars';
 import {StackNavigationProp} from '@react-navigation/stack';
+import backgroundImage from '../images/forecastBuddyBG.png';
 
 import WeatherForecastPage from './component/WeatherForecastPage';
 import SettingsPage from './component/SettingsPage';
@@ -20,13 +21,17 @@ const Drawer = createDrawerNavigator();
 
 function HomeScreen({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to WeatherForecastPage"
-        onPress={() => navigation.navigate('WeatherForecastPage')}
-      />
-    </View>
+    <ImageBackground
+      source={backgroundImage}
+      style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View>
+        <Text>Home Screen</Text>
+        <Button
+          title="Go to WeatherForecastPage"
+          onPress={() => navigation.navigate('WeatherForecastPage')}
+        />
+      </View>
+    </ImageBackground>
   );
 }
 
